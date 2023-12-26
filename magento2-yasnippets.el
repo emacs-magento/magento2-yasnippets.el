@@ -38,8 +38,8 @@
   "Load `magento2-yasnippets' snippets directory."
   (let ((snippet-dir (expand-file-name "snippets" magento2-yasnippets-dir)))
     (when (boundp 'yas-snippet-dirs)
-      (add-to-list 'yas-snippet-dirs 'magento2-yasnippets-dir t))
-    (yas-load-directory magento2-yasnippets-dir t)))
+      (add-to-list 'yas-snippet-dirs snippet-dir t))
+    (yas-load-directory snippet-dir)))
 
 ;;;###autoload
 (eval-after-load 'yasnippet (magento2-yasnippets-initialize))

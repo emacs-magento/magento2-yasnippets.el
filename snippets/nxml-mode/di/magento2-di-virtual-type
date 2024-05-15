@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# uuid: 76412ff5-a5a2-4866-9031-3d255a33bfa5
+# name: Magento 2 di.xml virtual type
+# key: <vir
+# condition: (magento2-yasnippets-buffer-name-suffix-p "di.xml")
+# --
+<virtualType name="$1" type="$2">
+    <arguments>
+        ${0:$$(yas-expand-snippet (yas-lookup-snippet "Magento 2 di.xml argument"))}
+    </arguments>
+</virtualType>

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# uuid: 43649810-a23b-4f36-9003-f87a463e46be
+# name: Magento 2 di plugin
+# key: <plu
+# condition: (magento2-yasnippets-buffer-name-suffix-p "di.xml")
+# --
+ <plugin name="${1-plugin-name}" type="${2-\Class}" />$0

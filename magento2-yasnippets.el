@@ -3,7 +3,7 @@
 ;; Copyright (C) 2023 Piotr Kwiecinski
 ;;
 ;; Version: 0.1.0
-;; Package-Requires: ((yasnippet "0.8.0"))
+;; Package-Requires: ((emacs "29.1") (yasnippet "0.8.0"))
 ;; Keywords: snippets
 ;; Homepage: https://github.com/emacs-magento/magento2-yasnippets.el
 ;;
@@ -29,6 +29,7 @@
 ;;; Code:
 
 (require 'yasnippet)
+(require 'magento2-yasnippets-lib)
 
 (defvar magento2-yasnippets-dir
   (file-name-directory (or load-file-name (buffer-file-name))))
@@ -36,13 +37,15 @@
 ;;;###autoload
 (defun magento2-yasnippets-initialize ()
   "Load `magento2-yasnippets' snippets directory."
+  (setq yas-wrap-around-region nil)
   (let ((snippet-dir (expand-file-name "snippets" magento2-yasnippets-dir)))
     (when (boundp 'yas-snippet-dirs)
       (add-to-list 'yas-snippet-dirs snippet-dir t))
     (yas-load-directory snippet-dir)))
 
 ;;;###autoload
-(eval-after-load 'yasnippet (magento2-yasnippets-initialize))
+(eval-after-load 'yasnippet
+  (lambda () (magento2-yasnippets-initialize)))
 
 (provide 'magento2-yasnippets)
 ;;; magento2-yasnippets.el ends here

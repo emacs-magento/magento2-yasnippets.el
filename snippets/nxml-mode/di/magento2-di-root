@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# uuid: 5cf2478f-0d16-4646-9fc9-54d83197177e
+# name: Magento 2 di root
+# key: m2diroot
+# condition: (when (and buffer-file-name (string-suffix-p "di.xml" buffer-file-name)))
+# --
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    $0
+</config>
+

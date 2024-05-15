@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# uuid: 18f84da7-f820-4fb1-aa66-a91cf44fd361
+# name: Magento 2 module node
+# key: <mod
+# condition: (magento2-yasnippets-buffer-name-suffix-p "module.xml")
+# --
+<module name="${1:Vendor_ModuleName}"/>$0

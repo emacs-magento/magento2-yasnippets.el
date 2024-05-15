@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# uuid: 2206acfb-2b5b-44b2-b7d7-de2863f96b91
+# name: Magento 2 module root
+# key: m2moduleroot
+# condition: (magento2-yasnippets-buffer-name-suffix-p "module.xml")
+# --
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="${1-Vendor_ModuleName}">
+        $0
+    </module>
+</config>

@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# uuid: 17116461-4d8a-460f-89a4-1f959cc76cc5
+# name: Magento 2 module sequence
+# key: <seq
+# condition: (magento2-yasnippets-buffer-name-suffix-p "module.xml")
+# --
+<sequence>
+    <module name="${1:Vendor_ModuleName}"/>$0
+</sequence>
+

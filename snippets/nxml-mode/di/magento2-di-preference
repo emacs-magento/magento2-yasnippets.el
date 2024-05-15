@@ -2,6 +2,6 @@
 # uuid: 9f9e6ce1-114a-4f33-90df-2beb8e04e981
 # name: Magento 2 Di preference 
 # key: <pre
-# condition: (when (and buffer-file-name (string-suffix-p "di.xml" buffer-file-name)))
+# condition: (magento2-yasnippets-buffer-name-suffix-p "di.xml")
 # --
 <preference for="${1-Intreface}" type="${2-Class}"/>$0

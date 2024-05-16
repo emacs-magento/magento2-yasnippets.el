@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# uuid: c8f56172-664e-414e-bae9-11be4554a95d
+# name: Magento 2 webapi root
+# key: m2webapiroot
+# condition: (magento2-yasnippets-buffer-name-suffix-p "webapi.xml")
+# --
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Webapi/etc/webapi.xsd">
+    ${0:$$(yas-expand-snippet (yas-lookup-snippet "Magento 2 webapi route"))}
+ </config>

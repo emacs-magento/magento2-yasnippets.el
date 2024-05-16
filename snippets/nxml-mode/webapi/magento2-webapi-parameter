@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# uuid: c4249db6-93f1-4554-afa0-5e1bba9a7ebf
+# name: Magento 2 webapi parameter
+# key: <par
+# condition: (magento2-yasnippets-buffer-name-suffix-p "webapi.xml")
+# --
+<parameter name="$1" force="${2:$$(yas-choose-value '("true" "false"))}">$3</parameter>$0

@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# uuid: 95569bed-a727-4f00-99dd-5452df8ef930
+# name: Magento 2 webapi route
+# key: <rou
+# condition: (magento2-yasnippets-buffer-name-suffix-p "webapi.xml")
+# --
+<route url="$1" method="${2:$$(yas-choose-value '("GET" "POST" "PUT" "PATCH" "DELETE"))}">
+    <service class="$3" method="$4"/>
+    <resources>
+        <resource ref="${5:$$(yas-completing-read "Resource: " '("anonymous" "self"))}"/>
+    </resources>$0
+ </route>

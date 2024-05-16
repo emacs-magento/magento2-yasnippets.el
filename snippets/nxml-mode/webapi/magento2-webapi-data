@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# uuid: b97fbc66-d616-4726-a422-f47018f57373
+# name: Magento 2 webapi data
+# key: <dat
+# condition: (magento2-yasnippets-buffer-name-suffix-p "webapi.xml")
+# --
+<data>
+    ${0:$$(yas-expand-snippet (yas-lookup-snippet "Magento 2 webapi parameter"))}
+</data>

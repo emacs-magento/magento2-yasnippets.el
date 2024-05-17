@@ -1,10 +1,10 @@
-;;; magento2-yasnippets.el --- Collection of Magento 2 snippets -*- lexical-binding: t; -*-
+;;; magento2-yasnippets.el --- Yasnippet collection for Magento 2 -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2023 Piotr Kwiecinski
+;; Copyright (C) 2023-2024 Piotr Kwiecinski
 ;;
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "29.1") (yasnippet "0.8.0"))
-;; Keywords: snippets
+;; Keywords: magento, snippets
 ;; Homepage: https://github.com/emacs-magento/magento2-yasnippets.el
 ;;
 ;;; License:
@@ -28,24 +28,24 @@
 ;;
 ;;; Code:
 
-(require 'yasnippet)
-(require 'magento2-yasnippets-lib)
+(declare-function yas-load-directory "yasnippet")
+(defvar yas-snippet-dirs)
 
-(defvar magento2-yasnippets-dir
+(defvar magento2-yasnippets-root
   (file-name-directory (or load-file-name (buffer-file-name))))
+
+(defvar magento2-yasnippets-snippets-dir
+  (expand-file-name "snippets" magento2-yasnippets-root)
+  "The directory containing Magento 2 snippets.")
 
 ;;;###autoload
 (defun magento2-yasnippets-initialize ()
-  "Load `magento2-yasnippets' snippets directory."
-  (setq yas-wrap-around-region nil)
-  (let ((snippet-dir (expand-file-name "snippets" magento2-yasnippets-dir)))
-    (when (boundp 'yas-snippet-dirs)
-      (add-to-list 'yas-snippet-dirs snippet-dir t))
-    (yas-load-directory snippet-dir)))
+  "Add `magento2-yasnippets-snippets-dir' to variable `yas-snippet-dirs' and load snippets."
+  (add-to-list 'yas-snippet-dirs magento2-yasnippets-snippets-dir t)
+  (yas-load-directory magento2-yasnippets-snippets-dir t))
 
 ;;;###autoload
-(eval-after-load 'yasnippet
-  (lambda () (magento2-yasnippets-initialize)))
+(eval-after-load 'yasnippet '(magento2-yasnippets-initialize))
 
 (provide 'magento2-yasnippets)
 ;;; magento2-yasnippets.el ends here

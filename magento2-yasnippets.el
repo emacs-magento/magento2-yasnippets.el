@@ -38,6 +38,10 @@
   (expand-file-name "snippets" magento2-yasnippets-root)
   "The directory containing Magento 2 snippets.")
 
+(defun magento2-yasnippets-buffer-name-suffix-p (suffix)
+  "Check if buffer name has a given SUFFIX."
+  (and buffer-file-name (string-suffix-p suffix buffer-file-name)))
+
 ;;;###autoload
 (defun magento2-yasnippets-initialize ()
   "Add `magento2-yasnippets-snippets-dir' to variable `yas-snippet-dirs' and load snippets."

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# uuid: 1ffc87b8-9599-48e5-867d-1a8187ec51bd
+# name: Magento 2 acl resource node full
+# key: <resf
+# condition: (magento2-yasnippets-buffer-name-suffix-p "acl.xml")
+# --
+<resource id="$1" title="$2" translate="title" sortOrder="$3" disabled="${4:$$(yas-choose-value '("true" "false"))}" />

@@ -38,9 +38,17 @@
   (expand-file-name "snippets" magento2-yasnippets-root)
   "The directory containing Magento 2 snippets.")
 
+(defvar magento2-yasnippets-templates-dir
+  (expand-file-name "templates/" magento2-yasnippets-root)
+  "Directory containing file templates for Magento 2.")
+
 (defun magento2-yasnippets-buffer-name-suffix-p (suffix)
   "Check if buffer name has a given SUFFIX."
   (and buffer-file-name (string-suffix-p suffix buffer-file-name)))
+
+(defun magento2-yasnippets-buffer-name-contain-p (regex)
+  "Check if buffer name contains a given REGEX."
+  (and buffer-file-name (string-match-p regex buffer-file-name)))
 
 ;;;###autoload
 (defun magento2-yasnippets-initialize ()

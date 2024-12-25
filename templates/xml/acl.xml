@@ -1,0 +1,1 @@
+${0:$$(yas-expand-snippet (yas-lookup-snippet "Magento 2 acl root"))}
